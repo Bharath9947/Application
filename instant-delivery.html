@@ -1,0 +1,203 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Instant Delivery – Food at your door, anywhere in India</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f2f5ef;--card:#fff;--ink:#1b1f3b;--mut:#626a85;--sf:#ffb400;--red:#d7263d;--grn:#1e8e5a;--line:#dfe4d8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12142a;--card:#1c2040;--ink:#f1f2fa;--mut:#9aa1c4;--line:#2d3260}}
+:root[data-theme="dark"]{--bg:#12142a;--card:#1c2040;--ink:#f1f2fa;--mut:#9aa1c4;--line:#2d3260}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 'Bricolage Grotesque',system-ui,sans-serif}
+button,input,select,textarea{font:inherit;color:inherit}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ink);color:#fff;display:flex;gap:10px;align-items:center;padding:10px 14px;flex-wrap:wrap}
+header b{font-size:22px;font-weight:800;color:var(--sf);cursor:pointer;margin-right:auto}
+header select{background:#ffffff1f;border:0;border-radius:8px;padding:7px 8px;color:#fff;max-width:150px}
+header select option{color:#111}
+.hb{background:#ffffff1f;border:0;color:#fff;border-radius:8px;padding:7px 11px;cursor:pointer}
+.hb.c{background:var(--sf);color:#1b1f3b;font-weight:800}
+main{max-width:980px;margin:0 auto;padding:14px}
+h1{font-size:clamp(24px,5vw,38px);margin:10px 0 4px;font-weight:800;line-height:1.1}
+h2{margin:0 0 8px;font-size:19px}
+.mut{color:var(--mut)}.sm{font-size:13px}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.hero{background:linear-gradient(135deg,#ffb400,#ff8a3d);color:#1b1f3b;border-radius:22px;padding:18px;margin:10px 0}.hero h1{margin:0 0 4px}.hero .cp{display:inline-block;background:#fff;border-radius:99px;padding:4px 12px;margin-top:8px;font-weight:800;font-size:13px}footer{text-align:center;color:var(--mut);padding:24px 14px;font-size:13px}
+input,select,textarea{background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:10px 12px;width:100%}
+.bar input{flex:1 1 220px;width:auto}
+.chip{border:1.5px solid var(--line);background:var(--card);border-radius:99px;padding:6px 13px;cursor:pointer}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:15px;box-shadow:0 2px 10px #1b1f3b0f}
+.rest{transition:transform .15s;cursor:pointer;display:flex;gap:12px;align-items:center}
+.rest:hover{transform:translateY(-2px)}.rest:hover,.rest:focus-visible{border-color:var(--sf);outline:2px solid var(--sf)}
+.em{font-size:40px;width:64px;height:64px;display:grid;place-items:center;background:var(--bg);border-radius:14px;flex:none}
+.tag{display:inline-block;background:var(--grn);color:#fff;border-radius:6px;padding:0 6px;font-size:12px;font-weight:600}
+.row{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:9px 0;border-bottom:1px dashed var(--line)}
+.row:last-child{border:0}
+.veg,.nv{width:14px;height:14px;border:1.5px solid var(--grn);display:inline-grid;place-items:center;border-radius:3px;margin-right:6px;vertical-align:-2px}
+.veg:after,.nv:after{content:"";width:6px;height:6px;border-radius:50%;background:var(--grn)}
+.nv{border-color:var(--red)}.nv:after{background:var(--red)}
+.btn{transition:transform .15s;background:var(--sf);color:#1b1f3b;border:0;border-radius:10px;padding:10px 16px;font-weight:800;cursor:pointer}
+.btn:active{transform:scale(.97)}.btn{border-radius:99px}.btn.big{border-radius:16px;width:100%;padding:14px;font-size:16px;margin-top:10px}
+.btn.g{background:transparent;border:1.5px solid var(--line);color:var(--ink)}
+.qty{display:inline-flex;align-items:center;border:1.5px solid var(--grn);border-radius:8px;overflow:hidden}
+.qty button{background:none;border:0;color:var(--grn);font-weight:800;width:30px;height:30px;cursor:pointer}
+.qty span{min-width:22px;text-align:center;font-weight:700}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:760px){.two{grid-template-columns:1fr}}
+.f{margin-bottom:9px}.f label{display:block;font-size:13px;color:var(--mut);margin-bottom:3px}
+.pay{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 10px}
+.tot{display:flex;justify-content:space-between;padding:3px 0}.tot.t{font-weight:800;font-size:17px;border-top:1.5px solid var(--ink);margin-top:6px;padding-top:8px}
+.steps{list-style:none;margin:0;padding:0}
+.steps li{padding:7px 0 7px 30px;position:relative;color:var(--mut)}
+.steps li:before{content:"";position:absolute;left:5px;top:11px;width:12px;height:12px;border-radius:50%;border:2px solid var(--line);background:var(--card)}
+.steps li.d{color:var(--ink)}.steps li.d:before{background:var(--grn);border-color:var(--grn)}
+.steps li.a{color:var(--ink);font-weight:800}.steps li.a:before{background:var(--sf);border-color:var(--sf);box-shadow:0 0 0 5px #ffb40040}
+svg.map{width:100%;height:auto;border-radius:12px;background:#dfe9d5;display:block}
+.ov{position:fixed;inset:0;background:#0009;display:grid;place-items:center;z-index:9;padding:20px}
+.ov .card{max-width:340px;text-align:center}
+.spin{width:38px;height:38px;border:4px solid var(--line);border-top-color:var(--sf);border-radius:50%;margin:10px auto;animation:s 1s linear infinite}
+@keyframes s{to{transform:rotate(360deg)}}
+#toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 16px;border-radius:10px;z-index:10;display:none;max-width:90%}
+.star{font-size:30px;cursor:pointer;background:none;border:0;color:var(--line)}.star.on{color:var(--sf)}
+.hide{display:none}
+@media(prefers-reduced-motion:reduce){.spin{animation-duration:3s}}
+:focus-visible{outline:2px solid var(--sf);outline-offset:2px}
+</style></head><body>
+<header><b onclick="go('home')" role="button" tabindex="0">⚡ Instant Delivery</b>
+<select id="city" aria-label="City" onchange="setCity(this.value)"></select>
+<select id="lang" aria-label="Language" onchange="setLang(this.value)"><option value="en">English</option><option value="hi">हिन्दी</option><option value="te">తెలుగు</option></select><button class="hb" id="ordb" onclick="go('orders')">My orders</button>
+<button class="hb c" id="cartb" onclick="go('checkout')">Cart · ₹0</button></header>
+<main id="app"></main><footer>Made with ❤️ for food lovers across India. Need help? We're always here.</footer><div id="toast" role="status"></div>
+<script>
+const $=s=>document.querySelector(s),H=s=>[...s].reduce((a,c)=>a*31+c.charCodeAt(0)|0,7)>>>0;
+const CM=[['Punjab Grill','North Indian','🍗',[['Butter Chicken',329,0,'🍗'],['Paneer Tikka Masala',279,1,'🧀'],['Dal Makhani',199,1,'🥘'],['Butter Naan',49,1,'🫓']]],
+['Wok Express','Chinese','🥡',[['Veg Hakka Noodles',179,1,'🍜'],['Chicken Manchurian',239,0,'🍗'],['Veg Momos',129,1,'🥟'],['Schezwan Fried Rice',199,1,'🍚']]],
+['Slice of Italy','Pizza','🍕',[['Margherita',249,1,'🍕'],['Farmhouse',349,1,'🍕'],['Chicken Pepperoni',399,0,'🍕'],['Garlic Bread',129,1,'🥖']]],
+['Burger Barn','Burgers','🍔',[['Aloo Tikki Burger',99,1,'🍔'],['Chicken Zinger',179,0,'🍔'],['Peri Peri Fries',89,1,'🍟'],['Cold Coffee',119,1,'🥤']]],
+['Green Bowl','Healthy','🥗',[['Quinoa Salad',249,1,'🥗'],['Paneer Wrap',199,1,'🌯'],['Fruit Bowl',149,1,'🍓'],['Cold-pressed Juice',129,1,'🧃']]]];
+const LOC={Hyderabad:['TS09','Dum Biryani House','🍛',[['Chicken Dum Biryani',289,0,'🍛'],['Veg Biryani',219,1,'🍚'],['Double ka Meetha',79,1,'🍮']]],
+Mumbai:['MH02','Vada Pav Corner','🥪',[['Vada Pav',30,1,'🥪'],['Pav Bhaji',149,1,'🍲'],['Bombay Sandwich',89,1,'🥪']]],
+Delhi:['DL01','Chole Bhature Wala','🫓',[['Chole Bhature',129,1,'🫓'],['Aloo Paratha',99,1,'🥙'],['Lassi',69,1,'🥛']]],
+Bengaluru:['KA01','Dosa Camp','🥞',[['Benne Masala Dosa',109,1,'🥞'],['Idli Vada',89,1,'🍘'],['Filter Coffee',49,1,'☕']]],
+Chennai:['TN07','Murugan Mess','🍽️',[['Chettinad Chicken Meals',249,0,'🍗'],['Pongal',79,1,'🍚'],['Filter Coffee',45,1,'☕']]],
+Kolkata:['WB02','Kathi Roll Co.','🌯',[['Egg Chicken Kathi Roll',139,0,'🌯'],['Kolkata Biryani',259,0,'🍛'],['Rasgulla (2 pc)',60,1,'🍥']]],
+Pune:['MH12','Misal Mandir','🌶️',[['Kolhapuri Misal Pav',119,1,'🌶️'],['Sabudana Khichdi',99,1,'🍚'],['Masala Chaas',39,1,'🥛']]],
+Ahmedabad:['GJ01','Gujarati Rasoi','🥘',[['Dhokla Plate',79,1,'🟨'],['Thepla Combo',119,1,'🫓'],['Undhiyu Thali',229,1,'🍱']]],
+Jaipur:['RJ14','Rajasthani Zaika','🍲',[['Dal Baati Churma',249,1,'🍲'],['Pyaaz Kachori',49,1,'🥟'],['Ghewar',99,1,'🍯']]],
+Lucknow:['UP32','Awadhi Dastarkhwan','🍢',[['Galouti Kebab',279,0,'🍢'],['Lucknowi Biryani',269,0,'🍛'],['Sheermal',59,1,'🫓']]],
+Kochi:['KL07','Malabar Kitchen','🥥',[['Appam & Veg Stew',159,1,'🥥'],['Kerala Fish Curry Meals',249,0,'🐟'],['Banana Fry',59,1,'🍌']]],
+Patna:['BR01','Litti Chokha Point','🥔',[['Litti Chokha',109,1,'🥔'],['Sattu Paratha',89,1,'🫓'],['Sattu Sharbat',39,1,'🥤']]]};
+const OTHER='Other city…',NAMES=['Ravi Kumar','Imran Sheikh','Suresh Patil','Arjun Singh','Mohan Das','Karthik R','Deepak Yadav','Anil Nair'];
+const CUS=['All','North Indian','Chinese','Pizza','Burgers','Healthy','Local favourite'];
+const CUM=[3,7,15,17,31];
+const T={en:{cart:'Cart',orders:'My orders',gm:'Good morning',ga:'Good afternoon',ge:'Good evening',hung:'Hungry in #? Pick something tasty and we\'ll bring it to your door. You can follow your rider live on the map.',promo:'🎁 New here? Use code WELCOME50 for ₹50 off',srch:'🔍 What are you craving today?',veg:'🟢 Veg only',add:'Add',vc:'View cart',almost:'Almost there! 😋',place:'Place order',pay:'Pay',past:'Your past orders 🧾',re:'Reorder 🔁',eta:'Arriving in about # min 🕐',near:'Almost there! About # min to go 🛵',done:'Delivered! Enjoy your meal 😋'},
+hi:{cart:'कार्ट',orders:'मेरे ऑर्डर',gm:'सुप्रभात',ga:'नमस्ते',ge:'शुभ संध्या',hung:'# में भूख लगी है? कुछ स्वादिष्ट चुनिए, हम आपके दरवाज़े तक पहुँचाएंगे। मैप पर अपने राइडर को लाइव देखिए।',promo:'🎁 नए हैं? ₹50 छूट के लिए WELCOME50 कोड इस्तेमाल करें',srch:'🔍 आज क्या खाने का मन है?',veg:'🟢 सिर्फ़ शाकाहारी',add:'जोड़ें',vc:'कार्ट देखें',almost:'बस थोड़ा और! 😋',place:'ऑर्डर दें',pay:'भुगतान करें',past:'आपके पिछले ऑर्डर 🧾',re:'दोबारा ऑर्डर करें 🔁',eta:'लगभग # मिनट में पहुँचेगा 🕐',near:'बस पहुँचने वाला है! लगभग # मिनट 🛵',done:'डिलीवर हो गया! भोजन का आनंद लें 😋'},
+te:{cart:'కార్ట్',orders:'నా ఆర్డర్లు',gm:'శుభోదయం',ga:'నమస్కారం',ge:'శుభ సాయంత్రం',hung:'#లో ఆకలిగా ఉందా? రుచికరమైనది ఎంచుకోండి, మేము మీ ఇంటి వద్దకు తీసుకొస్తాం. మ్యాప్‌లో మీ రైడర్‌ను లైవ్‌గా చూడండి.',promo:'🎁 కొత్తవారా? ₹50 తగ్గింపు కోసం WELCOME50 కోడ్ వాడండి',srch:'🔍 ఈ రోజు ఏం తినాలనిపిస్తోంది?',veg:'🟢 శాకాహారం మాత్రమే',add:'జోడించు',vc:'కార్ట్ చూడండి',almost:'దాదాపు అయిపోయింది! 😋',place:'ఆర్డర్ చేయండి',pay:'చెల్లించండి',past:'మీ గత ఆర్డర్లు 🧾',re:'మళ్లీ ఆర్డర్ చేయండి 🔁',eta:'సుమారు # నిమిషాల్లో వస్తుంది 🕐',near:'దాదాపు వచ్చేసింది! సుమారు # నిమిషాలు 🛵',done:'డెలివరీ అయింది! భోజనం ఆస్వాదించండి 😋'}};
+const STGL={en:['Order placed 🎉','Restaurant accepted ✅','Chef is cooking 👨‍🍳','Picked up by your partner 🛍️','On the way to you 🛵','Delivered 🥳'],
+hi:['ऑर्डर मिल गया 🎉','रेस्टोरेंट ने स्वीकार किया ✅','शेफ खाना बना रहे हैं 👨‍🍳','पार्टनर ने ले लिया 🛍️','आपके रास्ते में है 🛵','डिलीवर हो गया 🥳'],
+te:['ఆర్డర్ అందింది 🎉','రెస్టారెంట్ అంగీకరించింది ✅','చెఫ్ వండుతున్నారు 👨‍🍳','పార్టనర్ తీసుకున్నారు 🛍️','మీ వైపు వస్తోంది 🛵','డెలివరీ అయింది 🥳']};
+const t=k=>(T[S.lang]||T.en)[k],STGx=()=>STGL[S.lang]||STGL.en;
+let S={lang:(()=>{try{return localStorage.getItem('instant_lang')||'en'}catch(e){return'en'}})(),city:'Hyderabad',cart:{},rid:null,q:'',veg:false,cu:'All',ord:null,coupon:'',pay:'upi',view:'home'},tm=null;
+const ls={user(){try{return JSON.parse(localStorage.getItem('instant_user')||'{}')}catch(e){return{}}},saveUser(v){try{localStorage.setItem('instant_user',JSON.stringify(v))}catch(e){}},get(){try{return JSON.parse(localStorage.getItem('instant')||'[]')}catch(e){return[]}},set(v){try{localStorage.setItem('instant',JSON.stringify(v))}catch(e){}}};
+function mk(id,x,loc){const h=H(id+S.city);return{id,n:x[0],cu:loc?'Local favourite':x[1],e:x[2],it:x[3],r:((38+h%10)/10).toFixed(1),t:20+h%25,km:+(1.2+h%55/10).toFixed(1)}}
+function rests(){const l=LOC[S.city],a=CM.map((x,i)=>mk('c'+i,x));if(l)a.unshift(mk('L',[l[1],'',l[2],l[3]],1));return a}
+const R=id=>rests().find(r=>r.id===id);
+function toast(m){const t=$('#toast');t.textContent=m;t.style.display='block';clearTimeout(t._t);t._t=setTimeout(()=>t.style.display='none',2600)}
+function setCity(c){if(c===OTHER){c=(prompt('Enter your city or town')||'').trim();if(!c){fillCity();return}c=c[0].toUpperCase()+c.slice(1)}
+ if(S.city!==c&&Object.keys(S.cart).length){S.cart={};toast('We cleared your cart because restaurants differ in each city')}S.city=c;S.rid=null;fillCity();go('home')}
+function fillCity(){const n=Object.keys(LOC);if(!n.includes(S.city))n.push(S.city);$('#city').innerHTML=n.map(c=>`<option ${c===S.city?'selected':''}>${c}</option>`).join('')+`<option>${OTHER}</option>`}
+function go(v,id){clearInterval(tm);S.view=v;if(id)S.rid=id;window.scrollTo(0,0);({home,menu,checkout,track,orders})[v]();cartb()}
+const items=()=>Object.values(S.cart);
+function sub(){return items().reduce((a,c)=>a+c.p*c.q,0)}
+function cartb(){$('#cartb').textContent=`${t('cart')} · ₹${sub()}`;$('#ordb').textContent=t('orders');$('#lang').value=S.lang}
+function setLang(v){S.lang=v;try{localStorage.setItem('instant_lang',v)}catch(e){}go(S.view)}
+function bill(){const s=sub(),r=S.rid&&R(S.rid),km=r?r.km:3,fee=s&&s<499?Math.round(20+km*7):0,gst=Math.round(s*.05),plat=s?5:0;
+ let d=0;if(S.coupon==='WELCOME50'&&s>=199)d=50;if(S.coupon==='INDIA20')d=Math.min(120,Math.round(s*.2));
+ return{s,fee,gst,plat,d,t:Math.max(0,s+fee+gst+plat-d)}}
+/* HOME */
+function home(){const l=rests().filter(r=>(S.cu==='All'||r.cu===S.cu)&&(r.n+r.cu+r.it.map(i=>i[0]).join()).toLowerCase().includes(S.q.toLowerCase()));
+ const u=ls.user(),g=new Date().getHours(),hi=t(g<12?'gm':g<17?'ga':'ge');
+ $('#app').innerHTML=`<div class="hero"><h1>${hi}${u.nm?', '+u.nm.split(' ')[0]:''}! 👋</h1><div>${t('hung').replace('#',S.city)}</div><span class="cp">${t('promo')}</span></div>
+ <div class="bar"><input id="q" placeholder="${t('srch')}" value="${S.q}" oninput="S.q=this.value;list()" aria-label="Search">
+ <button class="chip ${S.veg?'on':''}" onclick="S.veg=!S.veg;home()">${t('veg')}</button></div>
+ <div class="bar">${CUS.map(c=>`<button class="chip ${S.cu===c?'on':''}" onclick="S.cu='${c}';home()">${c}</button>`).join('')}</div><div class="grid" id="list"></div>`;list()}
+function list(){const l=rests().filter(r=>(S.cu==='All'||r.cu===S.cu)&&(r.n+r.cu+r.it.map(i=>i[0]).join()).toLowerCase().includes(S.q.toLowerCase())&&(!S.veg||r.it.some(i=>i[2])));
+ $('#list').innerHTML=l.map(r=>`<div class="card rest" tabindex="0" onclick="go('menu','${r.id}')" onkeydown="if(event.key==='Enter')go('menu','${r.id}')"><div class="em" style="background:linear-gradient(135deg,hsl(${H(r.id+S.city)%360} 85% 86%),hsl(${(H(r.id+S.city)+50)%360} 85% 76%))">${r.e}</div><div><b>${r.n}</b><br><span class="tag">★ ${r.r}</span> <span class="sm mut">${r.t} min · ${r.km} km</span><div class="sm mut">${r.cu} ${r.it.slice(0,4).map(i=>i[3]).join('')}</div></div></div>`).join('')||'<p class="mut">Hmm, nothing matches that yet 🤔 Try another dish or clear the filters.</p>'}
+/* MENU */
+function menu(){const r=R(S.rid);$('#app').innerHTML=`<button class="btn g" onclick="go('home')">Back</button><h1>${r.e} ${r.n}</h1><div class="mut"><span class="tag">★ ${r.r}</span> ${r.t} min · ${r.km} km away · ${r.cu}</div><div class="card" style="margin-top:12px" id="mn"></div>`;mitems()}
+function mitems(){const r=R(S.rid);$('#mn').innerHTML=r.it.filter(i=>!S.veg||i[2]).map((i,n)=>{const k=r.id+n,c=S.cart[k];return`<div class="row"><div>${i[2]?'<span class="veg"></span>':'<span class="nv"></span>'}<b>${i[3]} ${i[0]}</b><div class="sm mut">₹${i[1]}</div></div>${c?qty(k):`<button class="btn" onclick="add('${k}')">${t('add')}</button>`}</div>`}).join('')+`<button class="btn big" onclick="go('checkout')">${t('vc')} · ₹${sub()}</button>`}
+const qty=k=>`<span class="qty"><button onclick="chg('${k}',-1)" aria-label="Less">−</button><span>${S.cart[k].q}</span><button onclick="chg('${k}',1)" aria-label="More">+</button></span>`;
+function add(k){const rid=k.split(/(?=\d$)/)[0],r=R(rid);if(items().length&&items()[0].rid!==rid){if(!confirm('Your cart has items from another restaurant. Start a new cart?'))return;S.cart={}}
+ const i=r.it[+k.slice(-1)];S.cart[k]={rid,n:i[0],p:i[1],v:i[2],q:1};cartb();mitems()}
+function chg(k,d){S.cart[k].q+=d;if(S.cart[k].q<1)delete S.cart[k];cartb();if(S.view==='menu')mitems();else{if(!items().length)return checkout();summ()}}
+/* CHECKOUT */
+function checkout(){if(!items().length){$('#app').innerHTML='<h1>Your cart is feeling hungry too 🛒</h1><p class="mut">Add a few yummy dishes and they will show up here.</p><button class="btn" onclick="go(\'home\')">Find something tasty</button>';return}
+ const r=R(items()[0].rid),u=ls.user();S.rid=r.id;
+ $('#app').innerHTML=`<h1>${t('almost')}</h1><div class="mut" style="margin-bottom:8px">Tell us where to deliver and how you'd like to pay.</div><div class="two"><div><div class="card"><h2>Delivery address</h2>
+ <div class="f"><label>Full name</label><input id="nm" autocomplete="name" value="${u.nm||''}" placeholder="What should we call you?"></div><div class="f"><label>Mobile number (10 digits)</label><input id="ph" inputmode="numeric" maxlength="10" value="${u.ph||''}"></div>
+ <div class="f"><label>House no., street, area</label><textarea id="ad" rows="2" placeholder="Flat / house no., street, landmark">${u.ad||''}</textarea></div>
+ <div class="two"><div class="f"><label>City</label><input id="ct" value="${S.city}"></div><div class="f"><label>PIN code</label><input id="pn" inputmode="numeric" maxlength="6" value="${u.pn||''}"></div></div>
+ <div class="f"><label>Delivery instructions (optional)</label><input id="ins" placeholder="e.g. Ring the bell twice"></div>
+ <button class="btn g sm" onclick="locate()">📍 Use my current location</button></div>
+ <div class="card" style="margin-top:12px"><h2>Payment</h2><div class="pay">${[['upi','UPI'],['card','Card'],['nb','Net banking'],['cod','Cash on delivery']].map(p=>`<button class="chip ${S.pay===p[0]?'on':''}" onclick="S.pay='${p[0]}';pm()">${p[1]}</button>`).join('')}</div><div id="pm"></div></div></div>
+ <div><div class="card"><h2>${r.e} ${r.n}</h2><div id="sum"></div></div></div></div>`;pm();summ()}
+function pm(){document.querySelectorAll('.pay .chip').forEach((c,i)=>c.classList.toggle('on',['upi','card','nb','cod'][i]===S.pay));
+ $('#pm').innerHTML={upi:'<div class="f"><label>UPI ID</label><input id="upi" placeholder="name@okhdfcbank"></div><div class="sm mut">Works with PhonePe, Google Pay, Paytm, BHIM and more.</div>',
+ card:'<div class="f"><label>Card number</label><input id="cn" inputmode="numeric" maxlength="19" placeholder="1234 5678 9012 3456"></div><div class="two"><div class="f"><label>Expiry (MM/YY)</label><input id="ce" maxlength="5"></div><div class="f"><label>CVV</label><input id="cv" type="password" maxlength="3" inputmode="numeric"></div></div>',
+ nb:'<div class="f"><label>Choose bank</label><select id="bk">'+['State Bank of India','HDFC Bank','ICICI Bank','Axis Bank','Punjab National Bank','Kotak Mahindra'].map(b=>`<option>${b}</option>`).join('')+'</select></div>',
+ cod:'<div class="sm mut">Pay in cash or UPI to the delivery partner. Keep exact change ready.</div>'}[S.pay]}
+function summ(){const b=bill();$('#sum').innerHTML=items().map(c=>{const k=Object.keys(S.cart).find(x=>S.cart[x]===c);return`<div class="row"><span>${c.v?'<span class="veg"></span>':'<span class="nv"></span>'}${c.n}</span>${qty(k)}<b>₹${c.p*c.q}</b></div>`}).join('')+
+ `<div style="display:flex;gap:6px;margin:10px 0"><input id="cp" placeholder="Coupon: WELCOME50 / INDIA20" value="${S.coupon}"><button class="btn" onclick="coupon()">Apply</button></div>
+ <div class="tot"><span>Item total</span><span>₹${b.s}</span></div><div class="tot"><span>Delivery fee ${b.fee?'':'(free over ₹499)'}</span><span>₹${b.fee}</span></div>
+ <div class="tot"><span>GST 5%</span><span>₹${b.gst}</span></div><div class="tot"><span>Platform fee</span><span>₹${b.plat}</span></div>${b.d?`<div class="tot" style="color:var(--grn)"><span>Discount</span><span>−₹${b.d}</span></div>`:''}
+ <div class="tot t"><span>To pay</span><span>₹${b.t}</span></div><button class="btn big" onclick="place()">${S.pay==='cod'?t('place'):t('pay')+' ₹'+b.t}</button>`}
+function coupon(){const c=$('#cp').value.trim().toUpperCase();if(c==='WELCOME50'&&sub()<199)return toast('WELCOME50 needs an item total of ₹199 or more');
+ if(!['WELCOME50','INDIA20'].includes(c)&&c)return toast('Oops, that coupon code isn’t valid');S.coupon=c;summ();toast(c?'Yay! Coupon applied 🎉':'Coupon removed')}
+function locate(){if(!navigator.geolocation)return toast('Location is not available on this device');navigator.geolocation.getCurrentPosition(p=>{$('#ad').value=`Pinned location (${p.coords.latitude.toFixed(4)}, ${p.coords.longitude.toFixed(4)})`;toast('Got it! Location added 📍')},()=>toast('Allow location access, or type your address'))}
+function place(){const v=id=>($('#'+id)||{}).value||'',e=m=>(toast(m),false);
+ if(v('nm').trim().length<2)return e('Please tell us your name so the partner knows who to look for');if(!/^[6-9]\d{9}$/.test(v('ph')))return e('Please enter a 10-digit mobile number so your partner can reach you');
+ if(v('ad').trim().length<6)return e('Please add your full address so we can find you');if(!/^[1-9]\d{5}$/.test(v('pn')))return e('Please check your 6-digit PIN code');
+ if(S.pay==='upi'&&!/^[\w.\-]{2,}@[a-z]{2,}$/i.test(v('upi')))return e('That UPI ID doesn’t look right. It should look like name@bank');
+ if(S.pay==='card'){if(v('cn').replace(/\s/g,'').length!==16)return e('Please check your 16-digit card number');if(!/^(0[1-9]|1[0-2])\/\d{2}$/.test(v('ce')))return e('Please enter the expiry as MM/YY');if(!/^\d{3}$/.test(v('cv')))return e('Please enter the 3-digit CVV')}
+ const o=document.createElement('div');o.className='ov';o.innerHTML=`<div class="card"><div class="spin"></div><b>${S.pay==='cod'?'Sending your order to the kitchen 👨‍🍳':S.pay==='upi'?'Please approve the request in your UPI app':S.pay==='nb'?'Redirecting to your bank':'Verifying your card (OTP)'}</b><div class="sm mut">Please don't close this page</div></div>`;document.body.append(o);
+ setTimeout(()=>{o.remove();start()},2200)}
+function start(){const r=R(S.rid),b=bill(),h=H(String(Date.now())),code=(LOC[S.city]||['IN'])[0];
+ ls.saveUser({nm:$('#nm').value,ph:$('#ph').value,ad:$('#ad').value,pn:$('#pn').value});
+ const re=Object.entries(S.cart).map(([k,c])=>[k,c.q]);
+ S.ord={re,id:'TH'+(10000+h%89999),r,it:items().map(c=>({...c})),b,pay:S.pay,addr:`${$('#ad').value}, ${$('#ct').value} – ${$('#pn').value}`,name:$('#nm').value,
+ pr:{n:NAMES[h%8],rt:(4.3+h%7/10).toFixed(1),veh:`${code}-${10+h%89}-${String.fromCharCode(65+h%26)}${String.fromCharCode(65+h/7%26)}-${1000+h%8999}`,ph:'+91 9'+(100000000+h%899999999)},
+ otp:1000+h%8999,t0:Date.now(),eta:r.t+8,done:0};
+ const hist=ls.get();hist.unshift({id:S.ord.id,rn:r.n,t:b.t,d:new Date().toLocaleString('en-IN'),n:S.ord.it.length,pay:S.pay,city:S.city,re:S.ord.re});ls.set(hist.slice(0,15));
+ S.cart={};S.coupon='';go('track')}
+/* TRACK */
+const PA='M270 175 L120 175 L120 150 L40 150',PB='M40 150 L40 100 L150 100 L150 60 L280 60 L280 40';
+function track(){const o=S.ord;if(!o)return go('orders');$('#app').innerHTML=`<h1>${o.r.e} Thanks, ${o.name.split(' ')[0]}! Order ${o.id} is on its way</h1><div class="two"><div><svg class="map" viewBox="0 0 320 200" role="img" aria-label="Live delivery map">
+ <g fill="#c9d8bb">${[[5,5,60,40],[80,10,50,35],[170,8,90,35],[5,65,25,25],[60,110,50,50],[170,75,90,65],[170,120,40,50],[230,140,80,40],[285,75,30,50],[5,160,20,35]].map(b=>`<rect x="${b[0]}" y="${b[1]}" width="${b[2]}" height="${b[3]}" rx="4"/>`).join('')}</g>
+ <path d="${PA}" fill="none" stroke="#fff" stroke-width="7" stroke-linejoin="round"/><path d="${PB}" fill="none" stroke="#fff" stroke-width="7" stroke-linejoin="round"/>
+ <path id="pa" d="${PA}" fill="none" stroke="#1b1f3b55" stroke-width="2" stroke-dasharray="4 4"/><path id="pb" d="${PB}" fill="none" stroke="#1b1f3b" stroke-width="2.5" stroke-dasharray="5 4"/>
+ <text x="40" y="150" font-size="20" text-anchor="middle" dominant-baseline="middle">${o.r.e}</text><text x="280" y="38" font-size="20" text-anchor="middle" dominant-baseline="middle">🏠</text>
+ <g id="pt"><circle r="13" fill="#ffb400" stroke="#1b1f3b" stroke-width="2"/><text font-size="15" text-anchor="middle" dominant-baseline="middle">🛵</text></g></svg>
+ <div class="card" style="margin-top:12px"><h2 id="eta"></h2><div class="sm mut" id="dist"></div></div>
+ <div class="card" style="margin-top:12px"><h2>🛵 Meet ${o.pr.n.split(' ')[0]}, your delivery partner</h2><div class="row"><div><b>${o.pr.n}</b> · ★ ${o.pr.rt}<div class="sm mut">${o.pr.veh}</div></div><button class="btn g" onclick="toast('Calling ${o.pr.n} at ${o.pr.ph}…')">📞 Call</button></div><div class="sm mut">Just share OTP <b>${o.otp}</b> with ${o.pr.n.split(' ')[0]} when the food arrives.</div></div></div>
+ <div><div class="card"><h2>Status</h2><ul class="steps" id="st">${STGx().map(s=>`<li>${s}</li>`).join('')}</ul><div id="act"></div></div>
+ <div class="card" style="margin-top:12px"><h2>Order details</h2>${o.it.map(c=>`<div class="tot"><span>${c.q} × ${c.n}</span><span>₹${c.p*c.q}</span></div>`).join('')}<div class="tot t"><span>${o.pay==='cod'?'Pay on delivery':'Paid online ('+o.pay.toUpperCase()+')'}</span><span>₹${o.b.t}</span></div>
+ <div class="sm mut" style="margin-top:8px">Delivering to ${o.name}, ${o.addr}</div></div></div></div>`;
+ tick();tm=setInterval(tick,100)}
+function tick(){const o=S.ord,e=(Date.now()-o.t0)/1000,T=CUM[4];let s=CUM.findIndex(c=>e<c);if(s<0)s=5;
+ const pa=$('#pa'),pb=$('#pb');if(!pa)return clearInterval(tm);let p,prog=0;
+ if(s<3){p=pa.getPointAtLength(pa.getTotalLength()*Math.min(1,e/CUM[2]))}else if(s===3){p=pb.getPointAtLength(0)}
+ else{prog=s===5?1:(e-CUM[3])/(CUM[4]-CUM[3]);p=pb.getPointAtLength(pb.getTotalLength()*prog)}
+ $('#pt').setAttribute('transform',`translate(${p.x},${p.y})`);
+ document.querySelectorAll('#st li').forEach((li,i)=>li.className=i<s?'d':i===s?(s===5?'d':'a'):'');
+ const mins=Math.max(0,Math.ceil((T-e)/T*o.eta));
+ $('#eta').textContent=s===5?t('done'):s<3?t('eta').replace('#',mins):t('near').replace('#',mins);
+ $('#dist').textContent=s===5?'Thank you for ordering with Instant Delivery 💛':s<3?`${STGx()[s]} ${o.pr.n} is heading to ${o.r.n} to pick up your food.`:`${(o.r.km*(1-prog)).toFixed(1)} km away from your door`;
+ const a=$('#act');if(s<2&&!o.done)a.innerHTML='<button class="btn g" style="margin-top:8px" onclick="cancelO()">Cancel order</button>';else if(s<5)a.innerHTML='';
+ if(s===5&&!o.done){o.done=1;clearInterval(tm);a.innerHTML=`<div style="margin-top:10px"><b>How was it? Tell ${o.pr.n.split(' ')[0]} thanks!</b><div>`+[1,2,3,4,5].map(n=>`<button class="star" onclick="rate(${n})" aria-label="${n} stars">★</button>`).join('')+`</div><button class="btn big" onclick="go('home')">Order something else</button></div>`}}
+function rate(n){document.querySelectorAll('.star').forEach((b,i)=>b.classList.toggle('on',i<n));toast('Thanks for your '+n+' ★ rating! 💛')}
+function cancelO(){if(!confirm('Cancel this order? '+(S.ord.pay==='cod'?'':'Your refund will reach your account in 3–5 working days.')))return;
+ const h=ls.get();if(h[0])h[0].pay='cancelled';ls.set(h);S.ord=null;toast('Order cancelled. We hope to serve you soon!');go('home')}
+function reorder(i){const h=ls.get()[i];S.city=h.city;fillCity();S.cart={};h.re.forEach(([k,q])=>{const rid=k.split(/(?=\d$)/)[0],it=R(rid).it[+k.slice(-1)];S.cart[k]={rid,n:it[0],p:it[1],v:it[2],q};S.rid=rid});toast('Your items are back in the cart 🛒');go('checkout')}
+function orders(){const h=ls.get();$('#app').innerHTML='<h1>'+t('past')+'</h1>'+(h.length?h.map((o,i)=>`<div class="card" style="margin-bottom:10px"><div class="tot"><b>${o.rn}</b><b>₹${o.t}</b></div><div class="sm mut">${o.id} · ${o.d} · ${o.n} item(s) · ${o.pay==='cancelled'?'Cancelled':o.pay==='cod'?'Cash on delivery':'Paid online'}</div>${o.pay!=='cancelled'&&o.re?`<button class="btn" style="margin-top:8px" onclick="reorder(${i})">${t('re')}</button>`:''}</div>`).join(''):'<p class="mut">Nothing here yet. Your first order is just a few taps away!</p><button class="btn" onclick="go(\'home\')">Order something yummy</button>')}
+fillCity();go('home');
+</script></body></html>
